@@ -22,4 +22,8 @@ public class userController {
 	}
 	
 	/* 로그인페이지 호출 */
+	@GetMapping("/user/loginUser")
+	public String loginMain() {
+		return "user/loginUser";
+	}
 }

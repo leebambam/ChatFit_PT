@@ -13,8 +13,9 @@ public class UserVO {
 	private String user_id;
 	private String user_email;
 	private String user_nickname;
+	private String user_pw;
 	private int user_age;
-	private String user_gender;
+	private int user_gender;
 	private float user_weight;
 	private float user_height;
 	private int user_level;
