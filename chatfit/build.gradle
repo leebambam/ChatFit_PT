@@ -25,20 +25,37 @@ repositories {
 }
 
 dependencies {
+	//jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	
+	//인증
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	
+	//tomcat
 	implementation 'org.springframework.boot:spring-boot-starter-tomcat'
+	
+	//web(jsp)
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
     implementation 'javax.servlet:jstl:1.2'
-    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+	implementation 'javax.servlet:javax.servlet-api:4.0.1' // Servlet API
+    implementation 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3' // JSP API	
+    
+	//mybatis
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
-	compileOnly 'org.projectlombok:lombok'
+	
+	//mysql
 	implementation 'mysql:mysql-connector-java:8.0.32'
+
+	//lombok
+	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	
+	//test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
 }
 
 tasks.named('test') {
