@@ -1,4 +1,4 @@
-package com.sideproject.chatfit.vo;
+package com.sideproject.chatfit.vo.user;
 
 import java.sql.Date;
 

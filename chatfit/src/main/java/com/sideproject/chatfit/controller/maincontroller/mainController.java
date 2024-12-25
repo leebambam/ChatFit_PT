@@ -3,7 +3,7 @@ package com.sideproject.chatfit.controller.maincontroller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.sideproject.chatfit.vo.UserVO;
+import com.sideproject.chatfit.vo.user.UserVO;
 
 import ch.qos.logback.core.model.Model;
 

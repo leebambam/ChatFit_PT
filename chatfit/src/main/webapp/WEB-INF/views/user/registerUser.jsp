@@ -23,7 +23,7 @@
 		        <input type="text" placeholder="비밀번호 (10~16자)" id="user_pw" name="user_pw">
 		    </li>
 		    <li>
-		        <input type="text" placeholder="비밀번호 재입력" id="user_confirmPw" name="user_confirmPw">
+		        <input type="text" placeholder="비밀번호 확인" id="user_confirmPw" name="user_confirmPw">
 		    </li>
 		    <li>
 		    	이메일
@@ -34,6 +34,12 @@
 		    	닉네임
 		        <input type="text" placeholder="닉네임" id="user_nickname" name="user_nickname">
 		        <button type="button" id="confirmNn" name="confirmNn">닉네임 중복 확인</button>
+		    </li>
+		    <li>
+		    	주소
+		        <input type="text" placeholder="주소" id="user_address1" name="user_address1">
+		        <input type="text" placeholder="상세주소" id="user_address2" name="user_address2">
+		        <input type="number" placeholder="우편번호" id="user_zipcode" name="user_zipcode">
 		    </li>
 		    <li>
 		    	<input type="submit" value="회원가입">
