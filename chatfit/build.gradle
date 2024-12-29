@@ -36,15 +36,19 @@ dependencies {
 	
 	//web(jsp)
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    // implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	// jsp 종속성 제거
     implementation 'javax.servlet:jstl:1.2'
 	implementation 'javax.servlet:javax.servlet-api:4.0.1' // Servlet API
     implementation 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3' // JSP API	
     
 	//mybatis
+    //implementation 'javax.servlet:javax.servlet-api:3.1.0'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 	
 	//mysql
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	compileOnly 'org.projectlombok:lombok'
 	implementation 'mysql:mysql-connector-java:8.0.32'
 
 	//lombok
