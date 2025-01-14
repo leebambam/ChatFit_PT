@@ -3,8 +3,12 @@ package com.sideproject.chatfit.controller.user;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.sideproject.chatfit.vo.user.UserVO;
 
 
 @Controller
@@ -17,7 +21,11 @@ public class userController {
 	}
 	
 	@PostMapping("/user/registerUser")
-	public String goRegister(HttpServletRequest request) {
+	public String goRegister(@ModelAttribute("registerUser") UserVO userVo, Model model) {
+		
+		//데이터 저장 로직
+		
+		model.addAttribute("message", "저장 성공!");
 		return "common/resultView";
 	}
 	

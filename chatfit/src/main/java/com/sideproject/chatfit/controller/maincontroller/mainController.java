@@ -1,24 +1,26 @@
 package com.sideproject.chatfit.controller.maincontroller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.sideproject.chatfit.vo.user.UserVO;
-
-import ch.qos.logback.core.model.Model;
 
 
 @Controller
 public class mainController {
 
 	@GetMapping("/")
-	public String init() {
-		return "main/baseMain";
+	public String init(Model model) {
+		model.addAttribute("title","챗핏 메인");
+		model.addAttribute("message","어서오세요");
+		return "main";
 	}
 	
-	@GetMapping("/main/baseMain")
-	public String goMain() {
-		return "main/baseMain";
-	}
-
+//	@GetMapping("/main")
+//	public String goMain(Model model) {
+//		model.addAttribute("title","챗핏 메인");
+//		model.addAttribute("message","어서오세요");
+//		return "main";
+//	}
+	
 }
