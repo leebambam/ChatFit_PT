@@ -11,8 +11,18 @@
       <console name="chatfit" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
+  <component name="DBNavigator.Project.DatabaseEditorStateManager">
+    <last-used-providers />
+  </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="70a96288-569b-42b1-aee8-ebd23173986c" dataset="chatfit.chat_user" active-filter-id="" />
+    <filter-actions connection-id="70a96288-569b-42b1-aee8-ebd23173986c" dataset="chatfit.user" active-filter-id="" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
