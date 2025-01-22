@@ -8,11 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.sideproject.chatfit.service.UserService;
 import com.sideproject.chatfit.vo.user.UserVO;
 
 
 @Controller
 public class userController {
+	private UserService userService;
+	
 	
     /* 회원가입 */
 	@GetMapping("/user/registerUser")
@@ -24,6 +27,7 @@ public class userController {
 	public String goRegister(@ModelAttribute("registerUser") UserVO userVo, Model model) {
 		
 		//데이터 저장 로직
+		userService.createUser(userVo);
 		
 		model.addAttribute("message", "저장 성공!");
 		return "common/resultView";
