@@ -1,4 +1,4 @@
-package com.sideproject.chatfit.vo.user;
+package com.sideproject.chatfit.vo;
 
 import java.sql.Date;
 
@@ -15,7 +15,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class UserVO {
+public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int user_num;				//유저 고유식별 번호

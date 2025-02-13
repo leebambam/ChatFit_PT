@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.sideproject.chatfit.repository.UserRepository;
-import com.sideproject.chatfit.vo.user.UserVO;
+import com.sideproject.chatfit.vo.User;
 
 @Service
 public class UserService {
@@ -15,20 +15,20 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public List<UserVO> getAllUsers() {
+    public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
-    public UserVO getUserById(int user_num) {
+    public User getUserById(int user_num) {
         return userRepository.findById(user_num).orElseThrow(() -> new RuntimeException("User not found"));
     }
 
-    public UserVO createUser(UserVO user) {
+    public User createUser(User user) {
         return userRepository.save(user);
     }
 
-    public UserVO updateUser(int user_num, UserVO userVO) {
-        UserVO user = getUserById(user_num);
+    public User updateUser(int user_num, User userVO) {
+        User user = getUserById(user_num);
         user.setUser_email(userVO.getUser_email());
         user.setUser_nickname(userVO.getUser_nickname());
         user.setUser_age(userVO.getUser_age());

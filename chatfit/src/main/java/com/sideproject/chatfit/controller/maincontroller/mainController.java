@@ -15,6 +15,12 @@ public class mainController {
 		model.addAttribute("message","어서오세요");
 		return "main";
 	}
+	@GetMapping("/main")
+	public String goMain(Model model) {
+		model.addAttribute("title","챗핏 메인");
+		model.addAttribute("message","어서오세요");
+		return "main";
+	}
 	
 //	@GetMapping("/main")
 //	public String goMain(Model model) {
