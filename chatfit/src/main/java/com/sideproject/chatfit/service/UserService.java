@@ -19,31 +19,36 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public User getUserById(int user_num) {
-        return userRepository.findById(user_num).orElseThrow(() -> new RuntimeException("User not found"));
+    public User getUserByUserNum(int userNum) {
+        return userRepository.findById(userNum).orElseThrow(() -> new RuntimeException("User not found"));
     }
-
+    
+    public User getUserByUserId(String userId) {
+        return userRepository.findByUserId(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found: " + userId));
+    }
+    
     public User createUser(User user) {
         return userRepository.save(user);
     }
 
-    public User updateUser(int user_num, User userVO) {
-        User user = getUserById(user_num);
-        user.setUser_email(userVO.getUser_email());
-        user.setUser_nickname(userVO.getUser_nickname());
-        user.setUser_age(userVO.getUser_age());
-        user.setUser_address1(userVO.getUser_address1());
-        user.setUser_address2(userVO.getUser_address2());
-        user.setZipcode(userVO.getZipcode());
-        user.setUser_weight(userVO.getUser_weight());
-        user.setUser_height(userVO.getUser_height());
-        user.setUser_mdate(userVO.getUser_mdate());
+    public User updateUser(int userNum, User userVO) {
+        User user = getUserByUserNum(userNum);
+        user.setUserEmail(userVO.getUserEmail());
+        user.setUserNickname(userVO.getUserNickname());
+        user.setUserAge(userVO.getUserAge());
+        user.setUserAddress1(userVO.getUserAddress1());
+        user.setUserAddress2(userVO.getUserAddress2());
+        user.setUserZipcode(userVO.getUserZipcode());
+        user.setUserWeight(userVO.getUserWeight());
+        user.setUserHeight(userVO.getUserHeight());
+        user.setUserMdate(userVO.getUserMdate());
         
         return userRepository.save(user);
     }
 
-    public void deleteUser(int user_num) {
-        userRepository.deleteById(user_num);
+    public void deleteUser(int userNum) {
+        userRepository.deleteById(userNum);
     }
 
 }

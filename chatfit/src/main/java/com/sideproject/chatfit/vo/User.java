@@ -18,60 +18,70 @@ import lombok.ToString;
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int user_num;				//유저 고유식별 번호
+	private int userNum;				//유저 고유식별 번호
+	
+	@Column(unique = true, nullable = false)
+	private String userId;
 	
 	@Column
-	private String user_id;
+	private String userEmail;
 	
 	@Column
-	private String user_email;
+	private String userNickname;
 	
 	@Column
-	private String user_nickname;
+	private String userPw;
 	
 	@Column
-	private String user_pw;
+	private int userAge;
 	
 	@Column
-	private int user_age;
+	private int userGender;
 	
 	@Column
-	private int user_gender;
+	private String userAddress1;
 	
 	@Column
-	private String user_address1;
+	private String userAddress2;
 	
 	@Column
-	private String user_address2;
+	private int userZipcode;
 	
 	@Column
-	private int zipcode;
+	private float userWeight;
 	
 	@Column
-	private float user_weight;
+	private float userHeight;
 	
 	@Column
-	private float user_height;
+	private int userLevel;				//운동 수준
 	
 	@Column
-	private int user_level;				//운동 수준
+	private int userGoal;				//운동 목표
 	
 	@Column
-	private int user_goal;				//운동 목표
+	private String userHealthStatus;	//기존 질환 정보 등
 	
 	@Column
-	private String user_health_status;	//기존 질환 정보 등
+	private Date userRdate;
 	
 	@Column
-	private Date user_rdate;
+	private Date userMdate;
 	
 	@Column
-	private Date user_mdate;
+	private int userAuth;
 	
-	@Column
-	private int user_auth;
+	/*
+	 * 컬럼명 스네이크케이스에서 캐멀케이스로 변경 ( user_id -> userId )
+	 * 사유 : jpa를 사용할때 메소드명에 언더스코어(_)가 사용될 경우 언더스코어 이전만 인식
+	 * 예) findbyUser_id 는 user_id 컬럼을 찾아서 매핑하는게 아닌 user을 찾음
+	*/
 	
-	@Column
-	private String user_photo;
-
+	//비밀번호 확인 일치여부
+	public boolean pwValidation(String user_pwchk) {
+		if(userPw.equals(user_pwchk)) {
+			return true;
+		}
+		return false;
+	}
 }
